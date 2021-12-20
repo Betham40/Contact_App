@@ -1,3 +1,4 @@
+import 'package:contactapp/new_profile.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,12 +15,18 @@ class ContactPage extends StatelessWidget {
         padding:  EdgeInsets.all(8.0),
         child:  Text("My Contacts", style: TextStyle(fontSize: 25, fontStyle: FontStyle.normal, color: Colors.black),),
       ),
-      actions: const [Padding(
-        padding: EdgeInsets.only(right:8.0),
-        child: CircleAvatar(backgroundImage:
-         NetworkImage(
-          "https://images.unsplash.com/photo-1639332793139-32eed37bdc99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60"),
-        radius: 25,
+      actions: [Padding(
+        padding: const EdgeInsets.only(right:8.0),
+        child: InkWell( onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Profile();
+          }));
+        },
+          child: CircleAvatar(backgroundImage:
+           NetworkImage(
+            "https://images.unsplash.com/photo-1639332793139-32eed37bdc99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60"),
+          radius: 25,
+          ),
         ),
       ),
      ],
@@ -152,12 +159,10 @@ class CallWidget extends StatelessWidget {
     return  ListTile(
       leading: Padding(
         padding: const EdgeInsets.only(top:10),
-        child: InkWell(onTap: () {},
-          child: CircleAvatar(
-            backgroundImage:
-           NetworkImage(picture),
-          radius: 30,
-          ),
+        child: CircleAvatar(
+          backgroundImage:
+         NetworkImage(picture),
+        radius: 30,
         ),
       ),
       title: Text(name,style: const TextStyle(
