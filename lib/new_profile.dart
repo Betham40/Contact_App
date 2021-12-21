@@ -36,6 +36,32 @@ class Profile extends StatelessWidget {
         ],
       ), preferredSize: const Size.fromHeight(150)),
     ),
+     body: ListView(
+        children:[
+          ListTile(
+              title: const Text('Mobile', style: TextStyle(color: Colors.black, fontSize: 15),),
+              subtitle: const Text('+61 491 570 156', style: TextStyle(color: Color.fromRGBO(210, 214, 210, 1)),),
+              trailing: Row(
+                children: const [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.message_rounded, color: Colors.black,),),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.phone, color: Colors.black,)
+                    ),
+                 ],
+              ),
+          ),
+        // const ListTile(
+        //     title: Text('Email',  style: TextStyle(color: Colors.black, fontSize: 15)),
+        //     subtitle: Text('DanKo350@gmail.com'),
+        //     trailing:CircleAvatar(backgroundColor:Colors.white,
+        //     child: Icon(Icons.email, color: Colors.black),),
+        //     ),
+         
+        ]
+      ),
       backgroundColor: const Color.fromRGBO(220, 241, 226, 1),
     );
   }
